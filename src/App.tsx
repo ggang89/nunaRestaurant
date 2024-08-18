@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
-import './App.css';
-import Store from './store';
-import { Restaurant } from './model/resturant';
+import React, { useState } from "react";
+import "./App.css";
+import Store from "./store";
+import { Restaurant } from "./model/restaurant";
 
-let data:Restaurant = {
+let data: Restaurant = {
   name: "누나네 식당",
   category: "western",
   address: { city: "incheon", detail: "somewhere", zipCode: 2345 },
@@ -15,11 +15,12 @@ let data:Restaurant = {
 
 const App: React.FC = () => {
   const [myRestaurant, setMyRestaurant] = useState<Restaurant>(data);
+  
   return (
-    <div >
+    <div>
       <Store info={myRestaurant} />
     </div>
   );
-}
+};
 
 export default App;
