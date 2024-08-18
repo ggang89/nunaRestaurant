@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import Store from './store';
 import { Restaurant } from './model/resturant';
@@ -13,10 +13,11 @@ let data:Restaurant = {
   ],
 };
 
-const App:React.FC=()=> {
+const App: React.FC = () => {
+  const [myRestaurant, setMyRestaurant] = useState<Restaurant>(data);
   return (
     <div >
-      <Store info={data} />
+      <Store info={myRestaurant} />
     </div>
   );
 }
