@@ -29,3 +29,13 @@ export type Menu = {
   price: number;
   category: string;
 };
+
+//API호출할 때 제네릭 사용하는 법
+export type ApiResponse<T>={
+  data: T[],
+  totalPage: number,
+  page:number
+}
+
+export type RestaurantResponse = ApiResponse<Restaurant>;
+//
