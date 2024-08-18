@@ -14,6 +14,7 @@ export type Restaurant = {
   address: Address;
   menu: Menu[]
 }
+export type RestaurantOnlyCategory = Pick<Restaurant, 'category'>
 
 export type Address = {
   city: string;
