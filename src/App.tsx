@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./App.css";
 import Store from "./store";
-import { Restaurant } from "./model/restaurant";
+import { Restaurant,Address } from "./model/restaurant";
 
 let data: Restaurant = {
   name: "누나네 식당",
@@ -15,10 +15,12 @@ let data: Restaurant = {
 
 const App: React.FC = () => {
   const [myRestaurant, setMyRestaurant] = useState<Restaurant>(data);
-  
+  const changeAddress = (address: Address)=>{
+    setMyRestaurant({...myRestaurant,address:address})
+  }
   return (
     <div>
-      <Store info={myRestaurant} />
+      <Store info={myRestaurant} changeAddress={changeAddress} />
     </div>
   );
 };
