@@ -21,6 +21,8 @@ export type Address = {
   zipCode: number;
 };
 
+export type AddressWithoutZip = Omit<Address,'zipCode'>
+
 export type Menu = {
   name: string;
   price: number;
